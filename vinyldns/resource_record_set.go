@@ -21,27 +21,27 @@ func resourceVinylDNSRecordSet() *schema.Resource {
 		Delete: resourceVinylDNSRecordSetDelete,
 
 		Schema: map[string]*schema.Schema{
-			"name": &schema.Schema{
+			"name": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"zone_id": &schema.Schema{
+			"zone_id": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"type": &schema.Schema{
+			"type": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"ttl": &schema.Schema{
+			"ttl": {
 				Type:     schema.TypeInt,
 				Optional: true,
 			},
-			"account": &schema.Schema{
+			"account": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"record_addresses": &schema.Schema{
+			"record_addresses": {
 				Type:     schema.TypeSet,
 				Optional: true,
 				Elem:     &schema.Schema{Type: schema.TypeString},
@@ -49,7 +49,7 @@ func resourceVinylDNSRecordSet() *schema.Resource {
 					return hashcode.String(v.(string))
 				},
 			},
-			"record_nsdnames": &schema.Schema{
+			"record_nsdnames": {
 				Type:     schema.TypeSet,
 				Optional: true,
 				Elem:     &schema.Schema{Type: schema.TypeString},
@@ -57,11 +57,11 @@ func resourceVinylDNSRecordSet() *schema.Resource {
 					return hashcode.String(v.(string))
 				},
 			},
-			"record_cname": &schema.Schema{
+			"record_cname": {
 				Type:     schema.TypeString,
 				Optional: true,
 			},
-			"record_text": &schema.Schema{
+			"record_text": {
 				Type:     schema.TypeString,
 				Optional: true,
 			},
@@ -169,7 +169,7 @@ func records(d *schema.ResourceData) ([]vinyldns.Record, error) {
 		}
 
 		return []vinyldns.Record{
-			vinyldns.Record{
+			{
 				CName: cname,
 			},
 		}, nil
@@ -177,7 +177,7 @@ func records(d *schema.ResourceData) ([]vinyldns.Record, error) {
 
 	if recordType == "TXT" {
 		return []vinyldns.Record{
-			vinyldns.Record{
+			{
 				Text: d.Get("record_text").(string),
 			},
 		}, nil

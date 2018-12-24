@@ -28,7 +28,7 @@ func TestAccVinylDNSGroupBasic(t *testing.T) {
 		Providers:    testAccProviders,
 		CheckDestroy: testAccVinylDNSGroupDestroy,
 		Steps: []resource.TestStep{
-			resource.TestStep{
+			{
 				Config: testAccVinylDNSGroupConfigBasic,
 				Check: resource.ComposeTestCheckFunc(
 					testAccCheckVinylDNSGroupExists("vinyldns_group.test_group"),

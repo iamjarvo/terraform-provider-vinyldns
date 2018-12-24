@@ -27,7 +27,7 @@ func TestAccVinylDNSRecordSetBasic(t *testing.T) {
 		Providers:    testAccProviders,
 		CheckDestroy: testAccVinylDNSRecordSetDestroy,
 		Steps: []resource.TestStep{
-			resource.TestStep{
+			{
 				Config: testAccVinylDNSRecordSetConfigBasic,
 				Check: resource.ComposeTestCheckFunc(
 					testAccCheckVinylDNSRecordSetExists("vinyldns_record_set.test_a_record_set"),

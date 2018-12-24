@@ -30,23 +30,23 @@ func resourceVinylDNSZone() *schema.Resource {
 		Delete: resourceVinylDNSZoneDelete,
 
 		Schema: map[string]*schema.Schema{
-			"name": &schema.Schema{
+			"name": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"email": &schema.Schema{
+			"email": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"admin_group_id": &schema.Schema{
+			"admin_group_id": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"status": &schema.Schema{
+			"status": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
-			"created": &schema.Schema{
+			"created": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
@@ -266,19 +266,19 @@ func connectionSchema() *schema.Schema {
 		Optional: true,
 		Elem: &schema.Resource{
 			Schema: map[string]*schema.Schema{
-				"name": &schema.Schema{
+				"name": {
 					Type:     schema.TypeString,
 					Required: true,
 				},
-				"key": &schema.Schema{
+				"key": {
 					Type:     schema.TypeString,
 					Required: true,
 				},
-				"key_name": &schema.Schema{
+				"key_name": {
 					Type:     schema.TypeString,
 					Required: true,
 				},
-				"primary_server": &schema.Schema{
+				"primary_server": {
 					Type:     schema.TypeString,
 					Required: true,
 				},

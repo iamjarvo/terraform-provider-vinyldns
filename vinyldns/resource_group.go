@@ -28,15 +28,15 @@ func resourceVinylDNSGroup() *schema.Resource {
 		Delete: resourceVinylDNSGroupDelete,
 
 		Schema: map[string]*schema.Schema{
-			"name": &schema.Schema{
+			"name": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"email": &schema.Schema{
+			"email": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"description": &schema.Schema{
+			"description": {
 				Type:     schema.TypeString,
 				Optional: true,
 			},
@@ -113,27 +113,27 @@ func userSchema() *schema.Schema {
 		Optional: true,
 		Elem: &schema.Resource{
 			Schema: map[string]*schema.Schema{
-				"user_name": &schema.Schema{
+				"user_name": {
 					Type:     schema.TypeString,
 					Optional: true,
 				},
-				"first_name": &schema.Schema{
+				"first_name": {
 					Type:     schema.TypeString,
 					Optional: true,
 				},
-				"last_name": &schema.Schema{
+				"last_name": {
 					Type:     schema.TypeString,
 					Optional: true,
 				},
-				"email": &schema.Schema{
+				"email": {
 					Type:     schema.TypeString,
 					Optional: true,
 				},
-				"created": &schema.Schema{
+				"created": {
 					Type:     schema.TypeString,
 					Computed: true,
 				},
-				"id": &schema.Schema{
+				"id": {
 					Type:     schema.TypeString,
 					Required: true,
 				},
